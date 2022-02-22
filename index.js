@@ -1,3 +1,4 @@
+const process = require("process");
 const Express = require("express");
 
 const expressApp = Express();
@@ -14,11 +15,11 @@ expressApp.get("/Hi", function (req, res) {
     res.send("Hi");
 });
 
-expressApp.get("/timezone",function(req, res){
+expressApp.get("/timezone", function (req, res) {
     res.send('["Asia","Africa"]');
 })
 
-expressApp.listen(3000, function () {
+expressApp.listen(process.env.PORT || 3000, function () {
     console.log("Started listening...");
 });
 
